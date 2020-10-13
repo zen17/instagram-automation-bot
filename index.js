@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const config = require('./config/puppeteer.json');
 const credentials = require('./config/credentials.json');
 const choosePhoto = require('./scripts/choose-photo');
-
+const path = require('path');
 
 (async () => {
 
@@ -28,11 +28,12 @@ const choosePhoto = require('./scripts/choose-photo');
   await page.click(config.selectors.not_now_save_credentials_button);
   await page.waitForNavigation();
   const [fileChooser] = await Promise.all([page.waitForFileChooser(), page.click(config.selectors.post_photo_button),]);
-  await fileChooser.accept([process.cwd()+'image.png']);
+  await fileChooser.accept([path.join(process.cwd(),'image.png')]);
   await page.waitForSelector(config.selectors.next_step_instagram)
   await page.click(config.selectors.next_step_instagram)
   await page.waitForTimeout(3000);
   await page.click(config.selectors.next_step_instagram)
-
+  await page.waitForNavigation();
+  await page.waitForTimeout(5000);
   await browser.close();
 })();
