@@ -1,8 +1,6 @@
-# instagram-unspalsh-automation-bot
-Puppeteer
 # Instagram automation bot
 
-Instagram automation bot is a simple Node.js app.
+Instagram automation bot is a simple Node.js, Puppeteer app.
 
 ## Installation
 
