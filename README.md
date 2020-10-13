@@ -11,12 +11,17 @@ npm install
 ```
 
 ## Usage
-Before using, you should cretete JSON file "credentials.json" and put it in config directory
-```credentials.json
+Before starting app , you should create JSON file "credentials.json" and put it in config directory
+Example of "credentials.json" file
+```
 {
   "username": "your instagram username",
   "password": "your instagram password"
 }
+```
+
+```then
+node index.js
 ```
 
 ## Contributing
