@@ -1,1 +1,2 @@
-# instagram-automation-bot
+# instagram-unspalsh-automation-bot
+Puppeteer
